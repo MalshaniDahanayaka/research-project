@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "9f1bedb5-b9a6-40e8-84c6-da27245be519",
+		"name": "medium complexity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18510572"
+	},
+	"item": [
+		{
+			"name": "serverless shopping app",
+			"item": [
+				{
+					"name": "shopping items function",
+					"item": [
+						{
+							"name": "get shopping items",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://5ld8c5zfdk.execute-api.ap-south-1.amazonaws.com/Prod/shoppingitems",
+									"protocol": "https",
+									"host": [
+										"5ld8c5zfdk",
+										"execute-api",
+										"ap-south-1",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"Prod",
+										"shoppingitems"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create shopping items",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 123,\n    \"name\": \"Example Item\",\n    \"price\": 10.99,\n    \"quantity\": 5,\n    \"stockDate\": \"2024-04-21\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://5ld8c5zfdk.execute-api.ap-south-1.amazonaws.com/Prod/shoppingitems",
+									"protocol": "https",
+									"host": [
+										"5ld8c5zfdk",
+										"execute-api",
+										"ap-south-1",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"Prod",
+										"shoppingitems"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "sales management function",
+					"item": [
+						{
+							"name": "analysis of sales",
+							"item": [
+								{
+									"name": "analyse",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://5ld8c5zfdk.execute-api.ap-south-1.amazonaws.com/Prod/analysis",
+											"protocol": "https",
+											"host": [
+												"5ld8c5zfdk",
+												"execute-api",
+												"ap-south-1",
+												"amazonaws",
+												"com"
+											],
+											"path": [
+												"Prod",
+												"analysis"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "sales data save",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 1,\n  \"productName\": \"Sample Product\",\n  \"unitPrice\": 10.99,\n  \"quantity\": 5,\n  \"salesDate\": \"2024-03-26\"     \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://5ld8c5zfdk.execute-api.ap-south-1.amazonaws.com/Prod/shoppingitems",
+									"protocol": "https",
+									"host": [
+										"5ld8c5zfdk",
+										"execute-api",
+										"ap-south-1",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"Prod",
+										"shoppingitems"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get sales data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://5ld8c5zfdk.execute-api.ap-south-1.amazonaws.com/Prod/shoppingitems",
+									"protocol": "https",
+									"host": [
+										"5ld8c5zfdk",
+										"execute-api",
+										"ap-south-1",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"Prod",
+										"shoppingitems"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "serverfull shopping app",
+			"item": [
+				{
+					"name": "shopping item management",
+					"item": [
+						{
+							"name": "add item",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Rice\",\n  \"price\": 3.99,\n  \"quantity\": 10,\n  \"stockDate\": \"2022-05-20\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverfull}}/shopping-item/save",
+									"host": [
+										"{{serverfull}}"
+									],
+									"path": [
+										"shopping-item",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all shopping items",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{serverfull}}/shopping-item/all",
+									"host": [
+										"{{serverfull}}"
+									],
+									"path": [
+										"shopping-item",
+										"all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "sales data management",
+					"item": [
+						{
+							"name": "analysis of sales",
+							"item": [
+								{
+									"name": "get analyse",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{serverfull}}/sales-details/analysis",
+											"host": [
+												"{{serverfull}}"
+											],
+											"path": [
+												"sales-details",
+												"analysis"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "add sales data",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "   {\n        \"id\" : 2600,\n        \"productName\": \"Yogurt\",\n        \"unitPrice\": 32.874,\n        \"quantity\": 26,\n        \"salesDate\": \"2023-07-17T18:30:00.000+00:00\"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverfull}}/sales-details/add",
+									"host": [
+										"{{serverfull}}"
+									],
+									"path": [
+										"sales-details",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get sales data",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{serverfull}}/sales-details/all",
+									"host": [
+										"{{serverfull}}"
+									],
+									"path": [
+										"sales-details",
+										"all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "serverfull",
+			"value": "http://13.233.123.181:8085",
+			"type": "string"
+		}
+	]
+}

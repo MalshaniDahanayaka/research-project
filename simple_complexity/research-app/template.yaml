@@ -1,0 +1,113 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  research-app
+
+  Sample SAM Template for research-app
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 20
+    MemorySize: 512
+
+    Tracing: Active
+    # You can add LoggingConfig parameters such as the Logformat, Log Group, and SystemLogLevel or ApplicationLogLevel. Learn more here https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html#sam-function-loggingconfig.
+    LoggingConfig:
+      LogFormat: JSON
+  Api:
+    TracingEnabled: true
+Resources:
+  TodoCreateFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: TodoCreateFunction
+      Handler: todocreate.App::handleRequest
+      Runtime: java17
+      Architectures:
+      - x86_64
+      MemorySize: 512
+      Environment:
+        Variables:
+          PARAM1: VALUE
+      Events:
+        TodoCreate:
+          Type: Api
+          Properties:
+            Path: /todo
+            Method: post
+
+  TodoRetrieveFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: TodoRetrieveFunction
+      Handler: todoretrieve.App::handleRequest
+      Runtime: java17
+      Architectures:
+      - x86_64
+      MemorySize: 512
+      Environment:
+        Variables:
+          PARAM1: VALUE
+      Events:
+        TodoRetrieve:
+          Type: Api
+          Properties:
+            Path: /todo
+            Method: get
+
+    # Update TodoFunction for updating an existing todo item
+  TodoUpdateFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: TodoUpdateFunction
+      Handler: todoupdate.App::handleRequest
+      Runtime: java17
+      Architectures:
+      - x86_64
+      MemorySize: 512
+      Environment:
+        Variables:
+          PARAM1: VALUE
+      Events:
+        TodoUpdate:
+          Type: Api
+          Properties:
+            Path: /todo
+            Method: put
+
+    # Delete TodoFunction for deleting a todo item
+  TodoDeleteFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: TodoDeleteFunction
+      Handler: tododelete.App::handleRequest
+      Runtime: java17
+      Architectures:
+      - x86_64
+      MemorySize: 512
+      Environment:
+        Variables:
+          PARAM1: VALUE
+      Events:
+        TodoDelete:
+          Type: Api
+          Properties:
+            Path: /todo/{id}
+            Method: delete
+
+
+  ApplicationResourceGroup:
+    Type: AWS::ResourceGroups::Group
+    Properties:
+      Name:
+        Fn::Sub: ApplicationInsights-SAM-${AWS::StackName}
+      ResourceQuery:
+        Type: CLOUDFORMATION_STACK_1_0
+  ApplicationInsightsMonitoring:
+    Type: AWS::ApplicationInsights::Application
+    Properties:
+      ResourceGroupName:
+        Ref: ApplicationResourceGroup
+      AutoConfigurationEnabled: 'true'
+

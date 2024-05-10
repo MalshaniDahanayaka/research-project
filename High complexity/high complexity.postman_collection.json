@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "195355f7-d308-4788-ae0c-ef17c9052212",
+		"name": "high complexity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18510572"
+	},
+	"item": [
+		{
+			"name": "serverless application",
+			"item": [
+				{
+					"name": "get all available time slots",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://zefb5mq7pe.execute-api.ap-south-1.amazonaws.com/Prod/availableTimeSlots",
+							"protocol": "https",
+							"host": [
+								"zefb5mq7pe",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"Prod",
+								"availableTimeSlots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get analysis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://zefb5mq7pe.execute-api.ap-south-1.amazonaws.com/Prod/analysis",
+							"protocol": "https",
+							"host": [
+								"zefb5mq7pe",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"Prod",
+								"analysis"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "serverfull application",
+			"item": [
+				{
+					"name": "create available timeslots",
+					"item": [
+						{
+							"name": "add time slot",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://13.233.123.181:8095/garage/update-timeslot",
+									"protocol": "http",
+									"host": [
+										"13",
+										"233",
+										"123",
+										"181"
+									],
+									"port": "8095",
+									"path": [
+										"garage",
+										"update-timeslot"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "upload file",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "http://13.233.123.181:8090/file/uploadFile",
+							"protocol": "http",
+							"host": [
+								"13",
+								"233",
+								"123",
+								"181"
+							],
+							"port": "8090",
+							"path": [
+								"file",
+								"uploadFile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "flight booking",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://13.233.123.181:8090/flight-booking/",
+							"protocol": "http",
+							"host": [
+								"13",
+								"233",
+								"123",
+								"181"
+							],
+							"port": "8090",
+							"path": [
+								"flight-booking",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "analysis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://13.233.123.181:8090/analyser/",
+							"protocol": "http",
+							"host": [
+								"13",
+								"233",
+								"123",
+								"181"
+							],
+							"port": "8090",
+							"path": [
+								"analyser",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

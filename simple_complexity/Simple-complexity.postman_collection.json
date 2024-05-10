@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "d78dada0-ef1e-474a-998d-fb4a931c5ee6",
+		"name": "Simple-complexity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18510572"
+	},
+	"item": [
+		{
+			"name": "serverless",
+			"item": [
+				{
+					"name": "add todo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \n    \"id\" : 0,\n    \"title\": \"Title 90\",\n    \"description\": \"Description is set\",\n    \"completed\": false\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://i0kyi3wr5j.execute-api.ap-south-1.amazonaws.com/Prod/todo",
+							"protocol": "https",
+							"host": [
+								"i0kyi3wr5j",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"Prod",
+								"todo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update todo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"id\": 2,\n        \"title\": \"new title\",\n        \"description\": \"checking update function\",\n        \"completed\": false\n    }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://i0kyi3wr5j.execute-api.ap-south-1.amazonaws.com/Prod/todo",
+							"protocol": "https",
+							"host": [
+								"i0kyi3wr5j",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"Prod",
+								"todo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get todo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://i0kyi3wr5j.execute-api.ap-south-1.amazonaws.com/Prod/todo/1",
+							"protocol": "https",
+							"host": [
+								"i0kyi3wr5j",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"Prod",
+								"todo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all todo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://i0kyi3wr5j.execute-api.ap-south-1.amazonaws.com/Prod/todo",
+							"protocol": "https",
+							"host": [
+								"i0kyi3wr5j",
+								"execute-api",
+								"ap-south-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"Prod",
+								"todo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sereverfull",
+			"item": [
+				{
+					"name": "add todo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Example Title\",\n    \"description\": \"Example Description\",\n    \"completed\": false\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverfull}}/api/v1/todos/",
+							"host": [
+								"{{serverfull}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"todos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update todo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"title\": \"sampe tittle testing\",\n        \"description\": \"example description\",\n        \"completed\": false\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{serverfull}}/api/v1/todos/52",
+							"host": [
+								"{{serverfull}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"todos",
+								"52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get todo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{serverfull}}/api/v1/todos/2",
+							"host": [
+								"{{serverfull}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"todos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all todo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{serverfull}}/api/v1/todos/",
+							"host": [
+								"{{serverfull}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"todos",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "serverless",
+			"value": "http://localhost:8080",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "serverfull",
+			"value": "http://13.233.123.181:8080",
+			"type": "string"
+		}
+	]
+}
